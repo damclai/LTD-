@@ -1,0 +1,113 @@
+\documentclass[a4paper,12pt]{article} % Định nghĩa tài liệu kiểu bài báo, khổ A4, font 12pt
+\usepackage[utf8]{vietnam} % Hỗ trợ tiếng Việt (bắt buộc nếu dùng tiếng Việt)
+\usepackage{listings} % Thêm package để hiển thị code
+\usepackage{xcolor} % Thêm màu sắc cho code
+
+% Cấu hình hiển thị code
+\lstset{
+  language=Dart, % Ngôn ngữ là Dart (dùng cho Flutter)
+  basicstyle=\ttfamily\small, % Font monospace, kích thước nhỏ
+  keywordstyle=\color{blue}, % Từ khóa màu xanh
+  stringstyle=\color{red}, % Chuỗi màu đỏ
+  commentstyle=\color{green!50!black}, % Comment màu xanh lá
+  numbers=left, % Số dòng bên trái
+  numberstyle=\tiny, % Kích thước số dòng nhỏ
+  stepnumber=1, % Tăng số dòng mỗi 1 dòng
+  numbersep=5pt, % Khoảng cách giữa số và code
+  showspaces=false, % Không hiển thị ký tự khoảng trắng
+  showstringspaces=false, % Không hiển thị ký tự khoảng trắng trong chuỗi
+  frame=single, % Khung bao quanh code
+  breaklines=true, % Tự động ngắt dòng nếu quá dài
+  breakatwhitespace=true, % Ngắt dòng tại khoảng trắng
+  tabsize=2 % Kích thước tab
+}
+
+\begin{document} % Bắt đầu nội dung
+
+% Mong muốn và định hướng của bạn là gì sau khi học xong môn này
+Em hy vọng sau khi học xong muôn này thì bản thân em có thể làm chủ được nó và có thể tự bản thân xây dựng những dự án cá nhân trùng bình khá và có tính thực tiện và để đạt được điều đó thì bản thân em sẽ cố gắng hết mình và làm hết sức mình với môn học này để đạt được kết quả tốt và đạt được những gì em muốn. Và định hướng của em sau khi học xong môn này là tạo ra những project có tính thực tiện cao và từ đó phát triển mình thêm để trở thành kỹ sư chuyên về lập trình mobile.
+
+% Theo bạn trong tương lai gần (10 năm) lập trình di động có phát triển không? Giải thích tại sao?
+Theo em thì trong 10 hay 15 năm tới thì lập trình di động vẫn có tính thực tiện cao và có khả năng phát triển đôi khi lại phát triển vượt bậc với một tầm cao mới. Bởi vì trong thời đại hiện nay em thấy nhu cầu về công nghệ ngày càng cao và xu hướng phát triển ngày càng mới mẻ và hiện đại hơn hơn nữa nhu cầu của người dùng ngày càng cao và chiếm số lượng rất lớn đặc biệt là thiết bị điện thoại, theo em thấy thì hầu như bây giờ nhà nhà người người từ trẻ em đến người lớn đều có riêng cho mính một chiếc điện thoại di động và sử dụng nó hầu như xuyên suốt trong cuộc sống hàng ngày và nhu cầu của mọi người ngày càng cao và hiện đại, nhiều người bị cuốn hút và phụ thuộc vào điện thoại rất nhiều vì vậy nên em nghĩ dù 10 hay 20 năm nữa thì lập trình di động vận phát triển và phát triển mạnh mẽ với một tầm cao mới hướng đến tương lai.
+
+% Viết ứng dụng có UI như sau
+\begin{lstlisting}
+// Code Flutter: ProfileScreen
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const ProfileScreen(),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.maybePop(context);
+                    },
+                    icon: Icon(Icons.arrow_back),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      // TODO: Thêm code
+                    },
+                    icon: Icon(Icons.edit),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 40),
+            const CircleAvatar(
+              radius: 60,
+              backgroundImage: NetworkImage(
+                "https://i.pravatar.cc/300",
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "John Wick",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Text(
+              "California, USA",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+\end{lstlisting}
+\end{document} % Kết thúc nội dung
